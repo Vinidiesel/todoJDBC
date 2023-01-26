@@ -41,6 +41,7 @@ public class TaskController {
         Connection connection = ConnectionFactory.getConnection();
         try {
             PreparedStatement stm = connection.prepareStatement("UPDATE tasks SET idProject = ?, name = ?, description = ?, completed = ?, notes = ?, deadline = ?, createdAt = ?, updateAt = ?  WHERE id = ?");
+
             stm.setInt(1, task.getIdProject());
             stm.setString(2, task.getName());
             stm.setString(3, task.getDescription());
